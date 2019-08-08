@@ -1,0 +1,26 @@
+<body>
+  <div class="todo_container">
+    <h1>Todo List</h1>
+    <p>A place to store your todos</p>
+    <input type="text" value="Filter your to-dos" />
+
+    <ol>
+      <li *ngFor="let chore of choresList; index as i">
+        <div class="tasks">
+          <button class="completed" *ngIf="chore.completed === true">
+            Complete
+          </button>
+          <p [ngClass]="{ taskCompleted: chore.completed }">{{ chore.task }}</p>
+        </div>
+        <div class="delete"><button>X</button></div>
+      </li>
+    </ol>
+
+    <div>
+      <input type="text" value="Add your to-do" />
+    </div>
+    <div id="add-button">
+      <button class="add-button">Add</button>
+    </div>
+  </div>
+</body>
